@@ -1,34 +1,13 @@
-name: CI devops 2024
+name: Build and Push Docker Image
+
 on:
-  # to begin you want to launch this job on main and develop branches
-  push:
-    branches:
-      - main
-      - develop
-  pull_request:
-
+  workflow_run:
+    workflows: [ "Test Backend" ]
+    types:
+      - completed
 jobs:
-  test-backend:
-    runs-on: ubuntu-22.04
-    steps:
-      # Checkout your GitHub code using actions/checkout@v2.5.0
-      - uses: actions/checkout@v2.5.0
-
-      # Set up JDK 17 with actions/setup-java@v3
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'corretto'
-          java-version: '17'
-
-      # Build and test with Maven
-      - name: Build and test with Maven
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=azekyoo_devops-livecoding -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-        working-directory: simple-api
-
-  # Define job to build and publish Docker images
   build-and-push-docker-image:
-    needs: test-backend
+    if: github.event.workflow_run.conclusion == 'success'
     # Run only when code is compiling and tests are passing
     runs-on: ubuntu-22.04
 
@@ -65,8 +44,3 @@ jobs:
           context: ./http-server
           tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-httpd:latest
           push: ${{ github.ref == 'refs/heads/main' }}
-
-
-
-
-

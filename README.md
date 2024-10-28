@@ -35,4 +35,33 @@ Pushing Docker images allows for easy deployment across environments, ensures ve
 
 #### Document your quality gate configuration
 
+![img.png](img.png)
+
+## Quality Gate Status
+
+| Metric           | Status       | Details                           |
+|------------------|--------------|-----------------------------------|
+| **Quality Gate** | Passed ✅    | Meets configured quality criteria |
+
+## Code Quality Metrics
+
+- **Security**:
+   - **2** Open issues
+   - **3** Security hotspots
+
+- **Reliability**:
+   - **0** Open issues
+   - **Rating**: D
+
+- **Maintainability**:
+   - **2** Open issues
+   - **Rating**: A
+
+- **Coverage**:
+   - **53.6%** of code covered by tests
+   - **123** lines are set for coverage conditions
+
+- **Duplications**:
+   - **0.0%** code duplication
+   - **583** lines analyzed for duplication
 
