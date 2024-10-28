@@ -29,3 +29,7 @@ Java libraries that enable integration testing with lightweight, disposable Dock
     - **Build and Test with Maven**: Executes `mvn clean verify` in the `simple-api` directory to build the project and run tests.
 
 
+#### For what purpose do we need to push docker images ?
+
+Pushing Docker images allows for easy deployment across environments, ensures version control, and facilitates collaboration among team members by providing a consistent application environment.
+
