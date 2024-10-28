@@ -23,7 +23,7 @@ jobs:
 
       # Build and test with Maven
       - name: Build and test with Maven
-        run: mvn -B verify sonar:sonar -Dsonar.projectKey=azekyoo -Dsonar.organization=devops-livecoding -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api/pom.xml
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=azekyoo_devops-livecoding -Dsonar.organization=devops-livecoding -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api/pom.xml
         working-directory: simple-api
 
   # Define job to build and publish Docker images
