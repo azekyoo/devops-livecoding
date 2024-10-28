@@ -33,3 +33,6 @@ Java libraries that enable integration testing with lightweight, disposable Dock
 
 Pushing Docker images allows for easy deployment across environments, ensures version control, and facilitates collaboration among team members by providing a consistent application environment.
 
+#### Document your quality gate configuration
+
+
