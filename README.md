@@ -2,8 +2,6 @@
 
 base for GitHub Actions
 
-This project is now mine
-
 # Questions
 
 #### What are test containers ?
@@ -64,4 +62,5 @@ Pushing Docker images allows for easy deployment across environments, ensures ve
 - **Duplications**:
    - **0.0%** code duplication
    - **583** lines analyzed for duplication
+  
 
