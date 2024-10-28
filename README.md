@@ -9,3 +9,23 @@ This project is now mine
 #### What are test containers ?
 
 Java libraries that enable integration testing with lightweight, disposable Docker containers, allowing isolated, reliable tests for dependencies like databases and message queues.
+
+#### Document your GitHub Actions configurations
+
+1. **Workflow Name**: `CI devops 2024`
+    - The workflow name is displayed in GitHub Actions for easy identification.
+
+2. **Trigger Conditions** (`on`):
+    - **Push Events**: The workflow is triggered on pushes to the `main` and `develop` branches.
+    - **Pull Requests**: It also runs on every pull request to ensure the code is up to quality standards before merging.
+
+3. **Job Definition** (`jobs`):
+    - **Job Name**: `test-backend`
+        - **Runs-On**: The job runs on an `ubuntu-22.04` environment.
+
+4. **Job Steps** (`steps`):
+    - **Checkout Repository**: Uses `actions/checkout@v2.5.0` to clone the repository, making the code accessible within the workflow.
+    - **Set Up JDK 17**: Uses the `actions/setup-java@v3` action to install JDK 17 with the Amazon Corretto distribution, which is compatible with many Java applications.
+    - **Build and Test with Maven**: Executes `mvn clean verify` in the `simple-api` directory to build the project and run tests.
+
+
