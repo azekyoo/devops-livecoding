@@ -1,0 +1,10 @@
+- name: Run Proxy
+  community.docker.docker_container:
+    name: httpd
+    image: azekyo/tp-devops-httpd	
+    ports:
+      - "80:80"
+    networks:
+      - name: my-network
+    state: started
+
